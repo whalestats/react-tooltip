@@ -130,6 +130,8 @@ class ReactTooltip extends React.Component {
     this.delayHideLoop = null;
     this.delayReshow = null;
     this.intervalUpdateContent = null;
+    this.prevContent = null;
+    this.content = null;
   }
 
   /**
@@ -147,6 +149,18 @@ class ReactTooltip extends React.Component {
     this.bindListener(); // Bind listener for tooltip
     this.bindWindowEvents(resizeHide); // Bind global event for static method
     this.injectStyles(); // Inject styles for each DOM root having tooltip.
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (
+      prevState.show &&
+      this.state.show &&
+      this.content &&
+      this.content !== this.prevContent
+    ) {
+      // Update position if content changed while tooltip is shown
+      this.updatePosition();
+    }
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -553,6 +567,9 @@ class ReactTooltip extends React.Component {
 
     const delayTime = !this.state.show ? parseInt(delayShow, 10) : 0;
 
+    this.prevContent = this.content;
+    this.content = placeholder;
+
     const updateState = () => {
       if (
         (Array.isArray(placeholder) && placeholder.length > 0) ||
@@ -619,6 +636,9 @@ class ReactTooltip extends React.Component {
       const isMyElement = targetArray.some(ele => ele === e.currentTarget);
       if (!isMyElement || !this.state.show) return;
     }
+
+    this.prevContent = this.content;
+    this.content = null;
 
     const resetState = () => {
       const isVisible = this.state.show;
@@ -765,6 +785,9 @@ class ReactTooltip extends React.Component {
     const wrapperClassName = [tooltipClass, extraClass]
       .filter(Boolean)
       .join(' ');
+
+    this.prevContent = this.content;
+    this.content = content;
 
     if (html) {
       const htmlContent = `${content}\n<style>${style}</style>`;
