@@ -1,19 +1,19 @@
-# react-tooltip
+# whalestats-tooltip
 
-[![Version](http://img.shields.io/npm/v/react-tooltip.svg)](https://www.npmjs.org/package/react-tooltip)
+[![Version](http://img.shields.io/npm/v/whalestats-tooltip.svg)](https://www.npmjs.org/package/whalestats-tooltip)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![npm download][download-image]][download-url]
-[![Build Status](https://travis-ci.org/wwayne/react-tooltip.svg?branch=master)](https://travis-ci.org/wwayne/react-tooltip)
+[![Build Status](https://travis-ci.org/wwayne/whalestats-tooltip.svg?branch=master)](https://travis-ci.org/wwayne/whalestats-tooltip)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-[download-image]: https://img.shields.io/npm/dm/react-tooltip.svg?style=flat-square
-[download-url]: https://npmjs.org/package/react-tooltip
+[download-image]: https://img.shields.io/npm/dm/whalestats-tooltip.svg?style=flat-square
+[download-url]: https://npmjs.org/package/whalestats-tooltip
 
 ## Demo
 
 [![Edit ReactTooltip](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/heuristic-curran-bddeu?fontsize=14&hidenavigation=1&theme=dark)
 
-Or see it on [Github Page](https://wwayne.github.io/react-tooltip).
+Or see it on [Github Page](https://wwayne.github.io/whalestats-tooltip).
 
 ## Maintainers
 
@@ -28,23 +28,23 @@ We would gladly accept a new maintainer to help out!
 ## Installation
 
 ```sh
-npm install react-tooltip
+npm install whalestats-tooltip
 ```
 
 or
 
 ```sh
-yarn add react-tooltip
+yarn add whalestats-tooltip
 ```
 
 ## Usage
 
 ### Using NPM
 
-1 . Require react-tooltip after installation
+1 . Require whalestats-tooltip after installation
 
 ```js
-import ReactTooltip from 'react-tooltip';
+import ReactTooltip from 'whalestats-tooltip';
 ```
 
 2 . Add data-tip = "your placeholder" to your element
@@ -53,7 +53,7 @@ import ReactTooltip from 'react-tooltip';
 <p data-tip="hello world">Tooltip</p>
 ```
 
-3 . Include react-tooltip component
+3 . Include whalestats-tooltip component
 
 ```jsx
 <ReactTooltip />
@@ -61,7 +61,7 @@ import ReactTooltip from 'react-tooltip';
 
 ### Standalone
 
-You can import `node_modules/react-tooltip/dist/index.js` into your page. Please make sure that you have already imported `react` and `react-dom` into your page.
+You can import `node_modules/whalestats-tooltip/dist/index.js` into your page. Please make sure that you have already imported `react` and `react-dom` into your page.
 
 ## Options
 
@@ -82,7 +82,7 @@ Notes:
 | isCapture        | data-iscapture        | Bool          | true, false                                                                                                                           | when set to true, custom event's propagation mode will be capture                                                                                                                                   |
 | offset           | data-offset           | Object        | top, right, bottom, left                                                                                                              | `data-offset="{'top': 10, 'left': 10}"` for specific and `offset={{top: 10, left: 10}}` for global                                                                                                  |
 | multiline        | data-multiline        | Bool          | true, false                                                                                                                           | support `<br>`, `<br />` to make multiline                                                                                                                                                          |
-| className        | data-class            | String        |                                                                                                                                       | extra custom class, can use !important to overwrite react-tooltip's default class                                                                                                                   |
+| className        | data-class            | String        |                                                                                                                                       | extra custom class, can use !important to overwrite whalestats-tooltip's default class                                                                                                              |
 | html             | data-html             | Bool          | true, false                                                                                                                           | `<p data-tip="<p>HTML tooltip</p>" data-html={true}></p>` or `<ReactTooltip html={true} />`, but see [Security Note](#security-note) below.                                                         |
 | delayHide        | data-delay-hide       | Number        |                                                                                                                                       | `<p data-tip="tooltip" data-delay-hide='1000'></p>` or `<ReactTooltip delayHide={1000} />`                                                                                                          |
 | delayShow        | data-delay-show       | Number        |                                                                                                                                       | `<p data-tip="tooltip" data-delay-show='1000'></p>` or `<ReactTooltip delayShow={1000} />`                                                                                                          |
@@ -105,7 +105,7 @@ Notes:
 
 ### Security Note
 
-The `html` option allows a tooltip to directly display raw HTML. This is a security risk if any of that content is supplied by the user. Any user-supplied content must be sanitized, using a package like [sanitize-html](https://www.npmjs.com/package/sanitize-html). We chose not to include sanitization after discovering it [increased our package size](https://github.com/wwayne/react-tooltip/issues/429) too much - we don't want to penalize people who don't use the `html` option.
+The `html` option allows a tooltip to directly display raw HTML. This is a security risk if any of that content is supplied by the user. Any user-supplied content must be sanitized, using a package like [sanitize-html](https://www.npmjs.com/package/sanitize-html). We chose not to include sanitization after discovering it [increased our package size](https://github.com/wwayne/whalestats-tooltip/issues/429) too much - we don't want to penalize people who don't use the `html` option.
 
 #### Note
 
@@ -120,7 +120,7 @@ The `html` option allows a tooltip to directly display raw HTML. This is a secur
 > Hide the tooltip manually, the target is optional, if no target passed in, all existing tooltips will be hidden
 
 ```jsx
-import ReactTooltip from 'react-tooltip'
+import ReactTooltip from 'whalestats-tooltip'
 
 <p ref={ref => this.fooRef = ref} data-tip='tooltip'></p>
 <button onClick={() => { ReactTooltip.hide(this.fooRef) }}></button>
@@ -136,7 +136,7 @@ import ReactTooltip from 'react-tooltip'
 > Show specific tooltip manually, for example:
 
 ```jsx
-import ReactTooltip from 'react-tooltip'
+import ReactTooltip from 'whalestats-tooltip'
 
 <p ref={ref => this.fooRef = ref} data-tip='tooltip'></p>
 <button onClick={() => { ReactTooltip.show(this.fooRef) }}></button>
@@ -147,7 +147,7 @@ import ReactTooltip from 'react-tooltip'
 
 ### 1. Using tooltip within the modal (e.g. [react-modal](https://github.com/reactjs/react-modal))
 
-The component was designed to set `<ReactTooltip />` once and then use tooltip everywhere, but a lot of people get stuck when using this component in a modal. You can read the discussion [here](https://github.com/wwayne/react-tooltip/issues/130). To solve this problem:
+The component was designed to set `<ReactTooltip />` once and then use tooltip everywhere, but a lot of people get stuck when using this component in a modal. You can read the discussion [here](https://github.com/wwayne/whalestats-tooltip/issues/130). To solve this problem:
 
 1. Place `<ReactTooltip />` outside of the `<Modal>`
 2. Use `ReactTooltip.rebuild()` when opening the modal
@@ -174,14 +174,14 @@ Same for empty children, if you don't want show the tooltip when the children is
 
 ### 3. Tooltip not binding to dynamic content
 
-When you render `<ReactTooltip>` ahead of dynamic content, and are using `data-for={id}` attributes 
-on new dynamic content, the tooltip will not register its event listener.  
+When you render `<ReactTooltip>` ahead of dynamic content, and are using `data-for={id}` attributes
+on new dynamic content, the tooltip will not register its event listener.
 
 For example, you render a generic tooltip in the root of your app, then load a list of content async.
 Elements in the list use the `data-for={id}` attribute to bind the tooltip on hover.
 Since the tooltip has already scanned for data-tip these new elements will not trigger.
 
-One workaround for this is to trigger `ReactTooltip.rebuild()` after the data load to scan for the attribute again, 
+One workaround for this is to trigger `ReactTooltip.rebuild()` after the data load to scan for the attribute again,
 to allow event wireup.
 
 #### Example
@@ -189,7 +189,7 @@ to allow event wireup.
 ```jsx
 <app>
   <ReactTooltip id="foo" />
-  <list/>
+  <list />
 </app>
 ```
 
