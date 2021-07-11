@@ -1,9 +1,9 @@
 {
-  "name": "react-tooltip",
-  "version": "0.0.2",
-  "description": "react tooltip component",
+  "name": "whalestats-tooltip",
+  "version": "0.0.13",
+  "description": "whalestats tooltip component",
   "main": "dist/index.js",
-  "types": "dist/react-tooltip.d.ts",
+  "types": "dist/whalestats-tooltip.d.ts",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "engines": {
@@ -21,7 +21,7 @@
     "build:watch": "rollup -c -w",
     "start": "npm-run-all clean build:watch",
     "gh-pages": "gh-pages -d example",
-    "github-changes": "github-changes -o wwayne -r react-tooltip -a --only-pulls --use-commit-body",
+    "github-changes": "github-changes -o wwayne -r whalestats-tooltip -a --only-pulls --use-commit-body",
     "copy:types": "cpy ./react-tooltip.d.ts ./dist --parents --dot",
     "cm": "git cz",
     "semantic-release": "semantic-release"
@@ -33,20 +33,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wwayne/react-tooltip"
+    "url": "https://github.com/whalestats/react-tooltip"
   },
   "keywords": [
     "react",
     "react-component",
     "tooltip",
-    "react-tooltip"
+    "whalestats-tooltip"
   ],
   "author": "wwayne",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wwayne/react-tooltip/issues"
+    "url": "https://github.com/whalestats/react-tooltip/issues"
   },
-  "homepage": "https://github.com/wwayne/react-tooltip#readme",
+  "homepage": "https://github.com/whalestats/react-tooltip#readme",
   "browserify-shim": {
     "react": "global:React",
     "react-dom": "global:ReactDOM"
